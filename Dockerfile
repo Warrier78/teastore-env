@@ -1,7 +1,9 @@
+FROM maven:3.5-jdk-8 
+CMD cd TeaStore-master
+RUN mvn clean install -DskipTests
+
+
 FROM tomcat:8.5-jre8
-LABEL maintainer="Dhanya Warrier"
-
-
 # Delete all example webapps from base container
 RUN rm -r /usr/local/tomcat/webapps/examples
 RUN rm -r /usr/local/tomcat/webapps/docs
